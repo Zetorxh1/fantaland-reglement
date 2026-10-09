@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0e">
+<meta name="description" content="Règlement officiel du serveur FiveM FantaLand Semi-WL.">
+<title>Règlement — FantaLand Semi-WL</title>
+<style>
+
+:root{color-scheme:dark;--bg:#080808;--panel:#111;--panel2:#191919;--red:#e50914;--red2:#8b0008;--text:#f7f7f7;--muted:#a7a7a7;--line:#292929}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:#080808;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.7;background-image:linear-gradient(120deg,transparent 0 68%,#300307 68% 68.2%,transparent 68.2%),radial-gradient(ellipse at 50% -20%,#5a080d 0,transparent 48%)}
+a{color:#ff626a;text-decoration:none;transition:.2s}a:hover{color:#fff}
+header{position:sticky;top:0;z-index:20;background:#090909f2;backdrop-filter:blur(16px);border-bottom:1px solid #3a1114}
+.topbar{max-width:1450px;margin:auto;padding:15px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;font-weight:1000;letter-spacing:.16em;font-size:15px}.brand-mark{width:48px;height:48px;display:grid;place-items:center;background:var(--red);clip-path:polygon(0 0,100% 0,82% 100%,0 100%);font-size:27px;font-style:italic;box-shadow:6px 6px 0 #5d0006}.brand small{display:block;color:#aaa;font-size:9px;letter-spacing:.24em;font-weight:700;margin-top:2px}
+.actions{display:flex;gap:9px;align-items:center}button,.pill{font:inherit;cursor:pointer;border:1px solid #4a4a4a;background:#161616;color:white;border-radius:3px;padding:10px 15px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;transition:.2s}button:hover,.pill:hover{border-color:var(--red);background:var(--red);transform:translateY(-2px)}
+.hero{max-width:1450px;margin:24px auto 0;padding:82px 44px 75px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.65fr);gap:50px;align-items:center;position:relative;overflow:hidden;background:linear-gradient(110deg,#171717 0%,#111 54%,#260307 100%);border-top:3px solid var(--red);border-bottom:1px solid #481015}
+.hero:after{content:"F";position:absolute;right:15%;top:-105px;font-size:560px;font-weight:1000;font-style:italic;color:#fff;opacity:.035;pointer-events:none;line-height:1}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;color:#ff555d;text-transform:uppercase;font-weight:900;letter-spacing:.24em;font-size:10px}.eyebrow:before{content:"";width:36px;height:3px;background:var(--red)}
+h1{font-size:clamp(48px,7vw,100px);line-height:.9;letter-spacing:-.07em;margin:24px 0 27px;font-weight:1000;text-transform:uppercase}h1 span{display:inline-block;color:var(--red);text-shadow:5px 5px 0 #390006}
+.lead{max-width:680px;color:#c6c6c6;font-size:16px;line-height:1.85}
+.hero-card{padding:29px;background:#090909;border:1px solid #4b2427;border-top:4px solid var(--red);border-radius:0;position:relative;overflow:hidden;box-shadow:14px 14px 0 #0006}.hero-card strong{display:block;font-size:19px;letter-spacing:-.02em;margin-bottom:8px;text-transform:uppercase}.hero-card p{margin:0;color:#aaa;font-size:13px}.sanctions{display:grid;gap:8px;margin-top:20px}.sanctions span{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid #2c2c2c;border-radius:0;background:#151515;font-size:12px;font-weight:800}.sanctions span:before{content:"";width:8px;height:8px;transform:rotate(45deg);background:var(--red);flex:none}.hero-card p:last-child{margin-top:15px;font-size:11px}
+.layout{max-width:1450px;margin:auto;padding:38px 32px 90px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:26px;align-items:start}
+aside{position:sticky;top:88px;max-height:calc(100vh - 108px);overflow:auto;background:#101010;border:1px solid #303030;border-top:3px solid var(--red);border-radius:0;padding:20px;scrollbar-width:thin;scrollbar-color:#555 transparent}
+aside h2{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#fff;margin:0 0 15px;display:flex;align-items:center;gap:9px}aside h2:before{content:"";height:15px;width:3px;background:var(--red)}
+.search{width:100%;padding:13px;border:1px solid #353535;border-radius:0;background:#080808;color:#fff;font:inherit;font-size:12px;margin-bottom:17px;outline:none}.search:focus{border-color:var(--red);box-shadow:inset 3px 0 var(--red)}
+.nav-list{display:grid;gap:4px}.nav-link{display:flex;align-items:center;gap:10px;padding:10px 11px;border-radius:0;color:#aaa;font-size:11px;text-transform:uppercase;letter-spacing:.035em;border-left:3px solid transparent;background:#151515}.nav-link:before{content:"";width:6px;height:6px;background:#555;transform:rotate(45deg);flex:none}.nav-link:hover,.nav-link.active{background:#30090d;color:#fff;border-left-color:var(--red)}.nav-link.active:before{background:var(--red)}
+.content{min-width:0}.notice{padding:17px 20px;background:#1b0b0d;border:1px solid #5a171d;border-left:4px solid var(--red);border-radius:0;margin-bottom:22px;color:#d8c4c5;font-size:13px}.notice strong{color:white}
+.rule-section{background:linear-gradient(125deg,#141414,#0d0d0d);border:1px solid #292929;border-radius:0;padding:32px 36px;margin-bottom:18px;scroll-margin-top:92px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}.rule-section:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#3b0b10;transition:background .2s}.rule-section:hover{border-color:#6c2025;transform:translateY(-2px)}.rule-section:hover:before{background:var(--red)}
+.section-kicker{font-size:9px;color:#ff555d;letter-spacing:.24em;font-weight:950}.rule-section h2{font-size:clamp(24px,2.7vw,36px);line-height:1.15;margin:8px 0 25px;letter-spacing:-.04em;font-weight:950;text-transform:uppercase;padding-bottom:17px;border-bottom:1px solid #333}.rule-section h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin:27px 0 11px;padding:10px 13px;border-left:3px solid var(--red);background:linear-gradient(90deg,#2a090c,#171717 75%);border-radius:0}.rule-section p{margin:10px 0;color:#c5c5c5;white-space:normal}.rule-section ul{padding-left:22px;color:#c5c5c5;margin:8px 0 17px}.rule-section li{padding:5px 0 5px 3px}.rule-section li::marker{color:var(--red)}.rule-point{padding:12px 15px;border-radius:0;background:#1a1a1a;border:1px solid #333;border-left:3px solid var(--red)}.empty{display:none;padding:35px;text-align:center;color:var(--muted);background:#101010;border:1px dashed #555;border-radius:0}
+footer{border-top:3px solid var(--red);padding:34px 24px;text-align:center;color:#777;font-size:11px;background:#050505}footer strong{color:#f3f3f3}
+@media(max-width:980px){.hero{grid-template-columns:1fr;gap:30px;padding:55px 28px}.hero-card{max-width:650px}.layout{grid-template-columns:1fr;padding-top:25px}aside{position:relative;top:auto;max-height:none}.nav-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero:after{right:0;font-size:420px}}
+@media(max-width:600px){.topbar{padding:11px 14px}.brand{font-size:11px;letter-spacing:.08em}.brand-mark{width:38px;height:38px;font-size:22px}.actions{gap:5px}.actions button{padding:8px;font-size:9px}.hero,.layout{margin-left:12px;margin-right:12px;padding-left:17px;padding-right:17px}.hero{padding-top:42px;padding-bottom:38px;gap:23px}h1{font-size:clamp(43px,13vw,66px)}.lead{font-size:14px}.hero-card{padding:20px}.nav-list{grid-template-columns:1fr 1fr}.rule-section{padding:23px 18px}.rule-section h2{font-size:24px}.rule-section p,.rule-section li{font-size:13px}.notice{font-size:12px}}
+@media print{header,aside,.actions,.search{display:none!important}.hero{padding:20px;display:block}.hero-card{margin-top:20px}.layout{display:block;padding:0}.rule-section{break-inside:avoid;background:white;color:black;border:1px solid #ccc}.rule-section p,.rule-section li{color:#222}body{background:white;color:black}.notice{color:#222}}
+
+</style>
+</head>
+<body>
+<header><div class="topbar">
+<div class="brand"><div class="brand-mark">F</div><div>FANTALAND<small>SEMI-WL • RÈGLEMENT OFFICIEL</small></div></div>
+<div class="actions"><button onclick="window.print()">Imprimer / PDF</button><button onclick="copyPageLink()">Copier le lien</button></div>
+</div></header>
+<div class="hero">
+<div><div class="eyebrow">FANTALAND • IMMERSION • RESPECT • ROLEPLAY</div><h1>LE CODE<br><span>FANTALAND</span></h1>
+<p class="lead">Bienvenue sur FantaLand Semi-WL. Prends le temps de lire et de connaître le règlement. Il s'applique à tous les joueurs afin de préserver un roleplay cohérent, respectueux et agréable.</p></div>
+<div class="hero-card"><strong>À connaître avant de jouer</strong><p>Le règlement peut être modifié régulièrement. Pense à le consulter de temps en temps. Selon la gravité des faits, une infraction peut entraîner une sanction.</p><div class="sanctions"><span>01 · Avertissement</span><span>02 · Blâme</span><span>03 · Ban temporaire ou définitif</span></div><p style="margin-top:14px;font-size:12px">Les avertissements sont permanents, conformément au règlement fourni.</p></div>
+</div>
+<div class="layout">
+<aside><h2>Navigation</h2><input id="search" class="search" type="search" placeholder="Rechercher une règle…" aria-label="Rechercher une règle"><nav class="nav-list"><a href="#section-0" class="nav-link">RÈGLEMENT FANTALAND</a>
+<a href="#section-1" class="nav-link">Règlement Discord</a>
+<a href="#section-2" class="nav-link">Règlement HRP</a>
+<a href="#section-3" class="nav-link">Lexique RP</a>
+<a href="#section-4" class="nav-link">Règlement RP</a>
+<a href="#section-5" class="nav-link">En ville</a>
+<a href="#section-6" class="nav-link">Les états d’inconscience</a>
+<a href="#section-7" class="nav-link">Les sommations</a>
+<a href="#section-8" class="nav-link">Règlement entreprises</a>
+<a href="#section-9" class="nav-link">Règlement services médicaux</a>
+<a href="#section-10" class="nav-link">Règlement LSPD</a>
+<a href="#section-11" class="nav-link">Règlement Cayo Perico</a>
+<a href="#section-12" class="nav-link">Règlement illégal</a>
+<a href="#section-13" class="nav-link">Braquages</a>
+<a href="#section-14" class="nav-link">RÈGLEMENT GÉNÉRAL</a>
+<a href="#section-15" class="nav-link">Groupes indés</a>
+<a href="#section-16" class="nav-link">Groupes officiels</a>
+<a href="#section-17" class="nav-link">Drogues</a>
+<a href="#section-18" class="nav-link">Règlement mort RP</a>
+<a href="#section-19" class="nav-link">Règlement Wipe</a>
+<a href="#section-20" class="nav-link">Règlement Streamer</a></nav></aside>
+<main class="content"><div class="notice"><strong>Important :</strong> en cas de problème en jeu, privilégiez le ticket auprès du staff et restez respectueux. Les règles ci-dessous reprennent le document transmis par l'équipe FantaLand.</div>
+<section class="rule-section" id="section-0" data-title="règlement fantaland"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>RÈGLEMENT FANTALAND</h2><p>Le règlement du serveur est à lire et à connaître. Certaines fautes peuvent aller d’un simple avertissement à un ban définitif.</p>
+<p>Des modifications sont apportées régulièrement, n’hésitez donc pas à y jeter un œil de temps en temps.</p>
+<p>Si les règles ne sont pas respectées, en fonction de la gravité de votre erreur, vous serez sanctionnés de la manière suivante :</p>
+<p class="rule-point">1• Avertissement</p>
+<p class="rule-point">2• Blâme</p>
+<p class="rule-point">3• BAN temporaire ou définitif</p>
+<p>Les avertissements sont permanents</p></section>
+<section class="rule-section" id="section-1" data-title="règlement discord"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement Discord</h2><h3>MP STAFF INTERDIT</h3>
+<p>Il est interdit de MP un membre du staff, Co Fonda ou Fondateur</p>
+<p>Tout doit passer par ticket. Le staff viendra vous répondre et/ou faire remonter votre demande si besoin</p>
+<h3>PING STAFF INTERDIT</h3>
+<p>Il est interdit de ping un membre du staff, Co Fonda, Fondateur ou de ping le serveur dans n’importe quelle discussion. Le staff ne vous répondra pas plus vite.</p>
+<h3>RESPECT ET POLITESSE</h3>
+<p>Vous rejoignez une communauté, vous devez faire preuve de respect et de politesse, si quelqu’un vous insulte ou vous provoque, inutile de répondre car vous pourrez aussi être sanctionné</p>
+<h3>NOM &amp; PRÉNOM RP</h3>
+<p>Il est interdit de mettre un préfixe devant son nom et prénom RP comme :  [LSPD], [EMS], [PDG], [CIVIL], [ILLÉGAL] etc, afin d&#x27;éviter le Métagaming</p>
+<h3>LE CHANNEL GÉNÉRAL HRP</h3>
+<p>C’est un channel HRP. Nous sommes là pour faire du RP EN JEU et non du RP Discord.</p>
+<p>On ne demande ou on ne donne pas des infos RP type &quot;un taxi dispo svp ?&quot; ou encore &quot;est-ce qu&#x27;il y a un coiffeur en ville ?&quot;, ou &quot;tenez mon numéro appelez moi pour avoir un rdv&quot;, ou “à quoi sert…”</p>
+<h3>PARTAGE, JEUX ET PUBLICITÉ</h3>
+<ul><li>La publicité de manière générale (sur le serveur ou en MP) ou un partage de lien menant vers un site internet extérieur à la communauté sont interdits</li>
+<li>Toute démarche commerciale, proposition de jeu avec gain d’argent ou de cadeaux est strictement interdite</li>
+</ul><h3>REMBOURSEMENTS</h3>
+<p>Les “preuves” remboursements sont facilement trafiquables, et inventables.</p>
+<p>Afin d’éviter de nous faire avoir, si vous n’avez pas de preuve concrète, rec vidéo ou autre, nous ne pourrons pas vous rembourser.</p>
+<h3>DISCORD PRIVÉS</h3>
+<p>Côté légal :</p>
+<p>FantaLand a mis à disposition pour les entreprises un discord global pour les recrutements ainsi que la gestion des entreprises. Tout doit passer par ici concernant votre entreprise.</p>
+<p>Côté illégal :</p>
+<p>FantaLand a mis à disposition pour les groupes un discord commun pour permettre aux groupes de recruter et de communiquer directement avec le staff.</p>
+<p>Il n’est pas interdit de créer un discord parallèle pour votre groupe, cependant nous n’en aurons pas la responsabilité.</p></section>
+<section class="rule-section" id="section-2" data-title="règlement hrp"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement HRP</h2><h3>NOM &amp; PRÉNOM RP OBLIGATOIRE :</h3>
+<ul><li>Sur Discord (clic droit sur son profil - modifier le profil du serveur)</li>
+<li>Sur Steam (profil - modifier le profil - nom du profil).</li>
+<li>Sur FiveM  (paramètres - nom d’utilisateur)</li>
+</ul><p>Vous risquez le kick si vous ne le mettez pas.</p>
+<h3>LOGICIEL DE TRICHE / MOD MENU</h3>
+<p>Mod Menu, logiciels de triches et cross air sont interdits</p>
+<h3>MOD MENU = BAN</h3>
+<h3>USEBUG</h3>
+<p>Si vous remarquez un usebug, merci de le signaler immédiatement au staff.</p>
+<p>L’utilisation d’un usebug ou le partage d’un usebug à d’autres joueurs = BAN</p>
+<h3>REMBOURSEMENTS</h3>
+<p>Les “preuves” remboursements sont facilement trafiquables, et inventables.</p>
+<p>Afin d’éviter de nous faire avoir, si vous n’avez pas de preuve concrète, rec vidéo ou autre, nous ne pourrons pas vous rembourser.</p></section>
+<section class="rule-section" id="section-3" data-title="lexique rp"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Lexique RP</h2><h3>MÉTAGAMING</h3>
+<p>Ce terme désigne le fait de se servir d&#x27;une information reçue en dehors du jeu</p>
+<p>et de s&#x27;en servir en jeu</p>
+<h3>POWERGAMING</h3>
+<p>Ce terme désigne le fait de faire des choses en jeu qui dans la réalité sont totalement</p>
+<p>irréalisables.</p>
+<p>Exemple : Chuter d’un immeuble et repartir comme si de rien n’était</p>
+<h3>MIX</h3>
+<p>Ce terme désigne le fait de mélanger le vocal RP et le vocal HRP</p>
+<h3>FREEKILL</h3>
+<p>Ce terme désigne le fait de tuer une personne sans raison apparente</p>
+<h3>REVENGEKILL</h3>
+<p>Ce terme désigne le fait de revenir sur une scène où l&#x27;on s&#x27;est fait tuer pour tuer à son</p>
+<p>tour la personne</p>
+<p>responsable de votre mort</p>
+<h3>FORCING RP</h3>
+<p>Ce terme désigne le fait de forcer une personne à agir d&#x27;une façon bien précise, alors que d&#x27;autres choix pourraient être envisageables</p>
+<h3>CARKILL</h3>
+<p>Ce terme désigne le fait d&#x27;utiliser son véhicule comme arme dans le but de tuer les gens en les écrasant ou bousculant</p>
+<h3>NO FEAR</h3>
+<p>Ce terme désigne le fait de n&#x27;avoir peur de rien, de s&#x27;en foutre de tout. Par exemple une personne se fait braquer et a deux grosses mitraillettes pointées sur sa tête et pourtant cette dernière fait comme si cela n&#x27;était rien</p>
+<h3>MASS RP</h3>
+<p>Ce terme désigne le fait de prendre en compte, même si vous êtes seuls, qu’il peut y avoir des joueurs et PNJ autour de vous</p>
+<p>Il faut considérer que les lieux publics comme les quartiers, les hôpitaux, les commissariats, routes etc sont peuplés de milliers d&#x27;habitants comme dans la réalité</p>
+<h3>BUNNY UP</h3>
+<p>Ce terme désigne le fait de sauter en courant (spam) pour aller plus vite</p>
+<h3>HRP VOCAL</h3>
+<p>Ce terme désigne le fait de parler hors Role Play en jeu ou d’utiliser des termes incohérents / illogiques.</p>
+<p>Évitez les phrases de type :</p>
+<p>“Comment sort-on son téléphone ?”</p>
+<p>“J’ai bug / crash”</p>
+<p>“Je vais appeler un modo / un papillon”</p>
+<p>Favorisez les phrases telles que :</p>
+<p>“Je trouve pas mon téléphone il a dû tomber au fond de mon sac”</p>
+<p>“J’ai une envie pressante désolé je reviens”</p>
+<p>“J’en toucherai un mot au gouvernement”</p></section>
+<section class="rule-section" id="section-4" data-title="règlement rp"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement RP</h2><h3>INTERDIT</h3>
+<ul><li>Les propos et RP racistes, sexistes, homophobes et transphobes sont strictement interdits.</li>
+<li>Les scènes de viol sont strictement interdites.</li>
+</ul><p>Tout manquement à ces 2 règles sera passible d’un BAN directement</p>
+<h3>RESPECT DE LA GENTE FÉMININE</h3>
+<p>Veillez à respecter les joueuses sur le serveur et restez corrects.</p>
+<p>Tout manquement à cette règle sera passible d’un BAN directement</p>
+<h3>PROBLÈME EN RP</h3>
+<p>Si vous êtes confrontés à jouer une scène sur laquelle il y aurait des problèmes, faites en sorte de prendre sur vous et de la jouer jusqu’au bout, ouvrez un ticket et contactez un membre du staff.</p>
+<h3>NOM DE PERSONNAGE</h3>
+<p>Il est interdit de prendre un nom &amp; prénom RP d’une personne célèbre.</p>
+<p>Il est interdit de faire un jeu de mot avec votre nom et prénom RP.</p>
+<h3>SOUNDPAD</h3>
+<p>Il est autorisé d’utiliser un soundpad dans le but d’accentuer certaines actions RP bruits relatifs à une activité de mécanicien ou EMS mais avec modération, pas d’abus de musique etc. Tout troll sera sanctionné.</p>
+<h3>MICRO</h3>
+<p>Les joueurs qui possèdent un microphone qui grésille, ont un écho ou simplement pas compréhensible peuvent se voir être kick / ban.</p>
+<h3>LES /ME</h3>
+<p>Les /me peuvent être utilisés uniquement pour certaines actions et mises en scènes qui peuvent aider au RP. Ce ne sont en aucun cas des pensées. Il est interdit de les utiliser à des fins HRP, ou pour exprimer une pensée ce qui ruine totalement l’immersion du RP.</p>
+<h3>LE MASQUE</h3>
+<p>Vous ne pouvez pas reconnaître un individu masqué. Vous ne pouvez pas le reconnaître à sa voix où à ses vêtements.</p>
+<h3>MÉTIERS</h3>
+<p>Vous ne pourrez avoir qu’un seul métier par personne. Cumuler 2 jobs n’est pas possible</p>
+<h3>LES PHOTOS</h3>
+<p>Une preuve visuelle est utilisable uniquement si elle a été photographiée de manière RP par votre téléphone / caméra pour LSPD-EMS.</p>
+<h3>LA CONDUITE</h3>
+<ul><li> Sauter avec son véhicule est interdit</li>
+<li>Il est interdit de rouler sur des montagnes / routes avec des véhicules non adaptés.</li></ul></section>
+<section class="rule-section" id="section-5" data-title="en ville"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>En ville</h2><h3>LES VÉHICULES</h3>
+<ul><li>Il est interdit de rentrer un véhicule sous prétexte qu’il est endommagé dans le but qu’il ressort réparé, appelez un mécano et faites le réparer</li>
+<li>Lorsque vous avez un pneu en moins vous devez rouler à une vitesse réduite et sensé, lorsque vous avez perdu vos 2 pneus vous devez impérativement stopper le véhicule dans les 100 mètres qui suivent.</li>
+</ul><h3>VOLS</h3>
+<ul><li>Il est interdit de voler les armes des forces de l’ordre ou des agents de sécurité.</li>
+<li>Il est interdit de voler des véhicules de services publics (LSPD, EMS, mécano)</li>
+<li>Il est interdit de voler les véhicules Full Custom des PNJ (exemple : Zentorno et Alpha) ou les véhicules de l&#x27;auto-école sous peine de sanction.</li>
+</ul><h3>ARMES</h3>
+<ul><li>Il est interdit d’avoir dans son inventaire plus d’une arme lourde (LSPD compris)</li>
+<li>Les mousquets (armes de chasse) vendus à l&#x27;armurerie doivent être utilisés exclusivement pour la chasse et non pour des braquages ou autres actions illégales.</li>
+</ul><h3>QUARTIERS</h3>
+<p>Les quartiers sont considérés comme des “HOT SPOT”. C&#x27;est-à-dire que vous ne pouvez pas rentrer dans un quartier comme au supermarché. Si vous rentrez pour provoquez vous pouvez à tout moment vous prendre une balle et vous prendre une MORT RP. Il est obligatoire de respecter le MASS RP.</p>
+<h3>LES MAISONS</h3>
+<p>Il est interdit d’occuper une maison si elle ne vous appartient pas. Les maisons sont achetables en RP, et vous ne pouvez pas loger dans l’une d’elles si vous n’êtes pas le propriétaire officiel.</p>
+<p>C’est tout simplement une question de respect du MASS RP.</p></section>
+<section class="rule-section" id="section-6" data-title="les états d’inconscience"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Les états d’inconscience</h2><p>Il existe 4 différents états d&#x27;inconscience.</p>
+<p>Tout ce qui se passe pendant que votre personnage est au sol ne doit pas être pris en</p>
+<p>compte, vous</p>
+<p>pourrez juste répondre aux médecins ou personnes voulant vous porter secours.</p>
+<h3>LE K.O :</h3>
+<p>Vous serez seulement un peu assommé, et vous ne pourrez pas ré-attaquer directement. Se prendre un tir de taser est considéré comme un K.O</p>
+<h3>LE MALAISE :</h3>
+<p>Vous n’avez pas bu assez d’eau ? Pas assez mangé ?</p>
+<p>Vous vous êtes donc évanoui. Dans ce cas vous vous rappelez de tout ce qu’il s’est passé avant votre malaise, mais vous serez un peu sonné au réveil</p>
+<h3>L&#x27;INCONSCIENCE :</h3>
+<p>Vous vous êtes pris un coup de poing ? Accident de voiture ? Vous vous êtes noyé ?</p>
+<p>Alors vous ne vous rappellerez plus des 10 dernières minutes avant votre inconscient (au réveil vous serez sonné et vous serez légèrement perturbé)</p>
+<p>​</p>
+<h3>LE COMA :</h3>
+<p>Quelqu’un vous a frappé fort à la tête ? Vous vous êtes fait tirer dessus ? Vous avez survécu à une explosion ou un crash d&#x27;hélicoptère ?</p>
+<p>Alors vous aurez oublier les 30 dernières minutes (au réveil, vous serez totalement perdu, lent et un peu paniqué)</p></section>
+<section class="rule-section" id="section-7" data-title="les sommations"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Les sommations</h2><p>Les sommations sont les étapes les plus importantes pour une prise d’otage,</p>
+<p>arrestation, braquage,</p>
+<p>kidnapping, fusillade ou autres selon les cas en scènes.</p>
+<p>Il existe 3 types de sommations à respecter obligatoirement :</p>
+<p>1 - Vocal / sonore</p>
+<p>(exemple: Arrête TOI ! / BOUGE PLUS !), les premières sommations en véhicules sont les gyrophares/klaxon</p>
+<p>2 - Tir de sommation</p>
+<p>(Coup de poing, tir de taser ou tir à côté du joueur) afin de lui montrer que vous êtes déterminé et que vous n&#x27;hésiterez pas à lui tirer dessus s&#x27;il ne coopère pas (en véhicule, tirez sur les pneus).</p>
+<p>3 - Blesser l’individu</p>
+<p>Le blessé dans une zone non-mortelle, bras, jambe, main, pied etc.</p>
+<p>Après avoir fait ces 3 sommations :</p>
+<p>Vous serez autorisé à mettre le joueur dans le coma, de manière violente ou non.</p>
+<p>Cependant, attention au tir dans la tête, de base une balle dans la tête tue directement.</p>
+<p>Pour faire plus réaliste, tirez au niveau du torse ou du ventre. Selon certaines scènes, la torture peut faire partie de la 3e sommation.</p>
+<p>Attention à ne pas en abuser. Vous avez le droit dans certains cas avec une raison valable, de couper les cheveux, une oreille, un doigt, arracher une dent ou un ongle.</p></section>
+<section class="rule-section" id="section-8" data-title="règlement entreprises"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement entreprises</h2><h3>PATRON</h3>
+<ul><li>Un seul patron maximum par entreprise</li>
+<li>Il peut y avoir un sous-directeur / chef / manager</li>
+</ul><h3>EMBAUCHE</h3>
+<ul><li>Il est obligatoire de passer par une scène RP avant de se faire embaucher dans une entreprise</li>
+</ul><h3>PRIX DE VENTE</h3>
+<ul><li>Vous devez obligatoirement vous fier aux prix fixés par le patron</li>
+<li>Il est interdit de baisser ou augmenter les prix par vous-même</li>
+</ul><h3>COMPTABILITÉ</h3>
+<ul><li>Le patron et les employés devront tenir des registres de vente et de comptabilité sur leurs discord respectifs</li>
+</ul><h3>VOLS</h3>
+<ul><li>Il est interdit de voler dans la caisse d’une entreprise pour son profit personnel.</li>
+<li>Il est interdit pour les concessionnaires d’acheter des véhicules personnels avec l’argent de l’entreprise. Vous devez les acheter avec votre argent personnel</li>
+</ul><h3>ILLÉGAL</h3>
+<p>Un patron d’entreprise ou un Co Patron ne pourront pas faire d’illégal. C’est une façon de réguler l’économie. Un patron qui se fera full benef avec son entreprise et full benef avec l’illégal va créer un déséquilibre complet sur l’économie, et donc privilégier certains joueurs. C’est donc interdit.</p>
+<p>Cependant, nous sommes ouverts à tout type de projet de ce genre sous certaines conditions. Si vous avez pour but premier de favoriser le RP, proposer des scènes, du jeu et non juste pour vous faire des $, nous pouvons étudier votre demande sous dossier uniquement.</p>
+<ul><li>Le dossier : Attention, le dossier devra être très complet. Vous devrez nous présenter vos objectifs en termes de RP, vos ambitions, pourquoi vouloir mêler l’illégal à votre entreprise et quels en sont les enjeux.</li>
+</ul><p>Sachez que les dossiers trop légers seront directement refusés, nous serons très exigeants.</p>
+<p>Les conséquences : Si votre dossier est accepté, vous prenez donc de gros risques en RP. Si vous êtes démasqués, vous pouvez perdre votre entreprise et tout ce qui va avec. C’est pourquoi vous devez êtres préparés.</p>
+<p>Mise en garde : Si nous voyons que votre RP se rapproche plus du farm intensif illégal et que votre unique aspiration est de vous faire de l’argent sans réel RP derrière, le projet et votre entreprise peut vous être retirée par le STAFF.</p>
+<h3>DÉMISSION D’UN PATRON</h3>
+<ul><li>Lorsqu’un patron quitte son entreprise, il est obligatoire d’y laisser le fond de caisse de 3000$. Si vous ne laissez pas cette somme de départ, vous risquez d’être prélevé sur votre argent personnel IG, ou sur vos biens IG. Attention aussi si vous avez des employés ou des impôts à payer, vous devez être réglo afin d’éviter les poursuites en RP.</li></ul></section>
+<section class="rule-section" id="section-9" data-title="règlement services médicaux"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement services médicaux</h2><h3>DIAGNOSTICS / INTERVENTIONS</h3>
+<ul><li>Un médecin est tenu au serment d&#x27;Hippocrate et doit soigner toutes personnes peu importe son identité ou son affiliation à un groupe ou métier.</li>
+<li>Les services médicaux ont entre leurs mains la vie des joueurs.</li>
+</ul><p>Ce sont eux qui décident des séquelles ou de la mort d&#x27;un personnage (en accord avec le staff).</p>
+<ul><li>Il est interdit de réanimer des corps lors d’une fusillade, il faut attendre qu’elle soit terminée.</li>
+<li>Il est obligatoire pour les patients de respecter et de prendre en compte les demandes et les diagnostics des médecins.</li>
+</ul><h3>TRAFIC</h3>
+<p>Il est strictement interdit de faire du trafic de bande, kit ou autre matériel de votre métier.</p>
+<h3>BRAQUAGE</h3>
+<p>Il est interdit de braquer ou de tirer sur des membres des services médicaux pendant leur service.</p>
+<h3>UNITÉ X</h3>
+<p>Il est interdit de prendre l&#x27;Unité X sur une scène RP qui n&#x27;est pas terminée. Vous devrez attendre les Services Médicaux s&#x27;il y a du monde sur place.</p></section>
+<section class="rule-section" id="section-10" data-title="règlement lspd"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement LSPD</h2><h3>CONTRÔLES</h3>
+<ul><li>Les contrôles de police doivent être justifiés : individu suspect, appels de témoins etc.</li>
+<li>Les joueurs SONT TOUS innocents jusqu’à preuve du contraire ! C’est aux forces de l’ordre d’enquêter et d’apporter des preuves aux soupçons / accusations.</li>
+</ul><p>Faute de preuves, il ne peuvent agir et faire comparaître des individus devant le juge</p>
+<ul><li>Il est strictement interdit de perquisitionner une propriété sans mandat d’arrêt fourni par un juge (RP) ou autorisation STAFF</li>
+</ul><h3>RIPOUX</h3>
+<ul><li>Il est interdit d’être ripoux.</li>
+</ul><h3>INDIC</h3>
+<ul><li>Le RP indic est interdit.</li>
+<li>Le Lspd  doit s’infiltrer et enquêter lui-même pour avoir des infos.</li>
+</ul><h3>LES PIT</h3>
+<p>Les PIT sont interdits</p>
+<h3>LES TIRS</h3>
+<p>Vous êtes autorisé à tirer uniquement si vous êtes confronté aux cas suivants :</p>
+<ul><li>Agressé par un individu armé</li>
+<li>Un véhicule dangereux vous fonce dessus</li>
+<li>Un individu a blessé ou exécuté un citoyen et menace de récidiver</li>
+<li>Vous ne devez pas ouvrir le feu en premier (sauf contexte RP), sauf pour des sommations ou tirs de sommations dans les airs</li>
+<li>Ne pas taser instantanément, si l’individu ne présente pas de risque en votre encontre</li>
+<li>Vous êtes autorisés à taser une personne dans / depuis un véhicule mais vous ne devez pas en abuser et respecter les sommations. Ici aussi, ce genre d’action intervient surtout si vous estimez que le conducteur est un danger pour la population</li>
+</ul><h3>QUARTIERS</h3>
+<ul><li>Il est strictement interdit d’aller sans raison dans des quartiers chauds ou pour les provoquer, il faut un contexte RP ou avoir vu un flagrant délit de vos yeux.</li>
+<li>Pour vous rendre dans un quartier, vous devez obligatoirement vous organiser avant avec vos supérieurs et être au minimum 8 personnes.</li>
+</ul><h3>POINTS ILLÉGAUX</h3>
+<ul><li>Le LSPD ne peut pas chercher les points illégaux ni même les camper une fois découvert. Une fois un point découvert, informez le STAFF et le point sera changé de place.</li>
+<li>Le temps que le point soit changé, vous êtes autorisés à faire des passages toutes les 45 min</li>
+</ul><h3>LES AMENDES</h3>
+<p>Évitez de trop charger les amendes si vous voyez que le joueur en face de vous est coopératif. Soyez fair-play.</p>
+<h3>RAPPORTS</h3>
+<p>Pour chaque arrestation, garde à vue, plaintes etc. vous êtes tenu de garder une trace écrite : nom de l’officier en charge, identité du détenu ou du plaintif, nature de l’arrestation, date/heure + fait reprochés, dans un channel discord/trello/mdt prévu à cet effet.</p>
+<h3>ABUS</h3>
+<p>Vous ne devez pas abuser de vos fonctions, insulter les citoyens et garder votre sang-froid ainsi que votre professionnalisme, le respect est primordial.</p>
+<h3>LES GAV</h3>
+<ul><li>Les gardes à vue ne doivent pas dépasser 20 minutes “sans scène” OBLIGATOIREMENT !</li>
+</ul><p>Nous n&#x27;avons pas tous le même temps de jeu, certains ne se connectent que quelques heures le soir, et si c&#x27;est pour passer plus d’1H seul en GAV il n&#x27;y a aucun intérêt pour le joueur.</p>
+<p>Rappelez vous que vous sanctionnez des personnages RP et non des joueurs. Pensez aussi à l&#x27;amusement du joueur d&#x27;en face.</p>
+<h3>PRISON</h3>
+<ul><li>Les peines de prison fédérale peuvent être de 1 à 2 jours maximum.</li>
+</ul><p>Si un délai plus long est mérité, en accord avec le staff, un wipe sera effectué.</p></section>
+<section class="rule-section" id="section-11" data-title="règlement cayo perico"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement Cayo Perico</h2><h3>SUR L&#x27;ÎLE</h3>
+<ul><li>L’île de Cayo Perico ne possède pas la même juridiction que Los Santos. C’est une</li>
+</ul><p>île indépendante</p>
+<p>qui détient son propre système politique.</p>
+<ul><li>L’île est contrôlée actuellement par un Roi ainsi qu’une milice. Certains endroits sont</li>
+</ul><p>très surveillés ou</p>
+<p>fermés à clé. Il est donc important de respecter le MASS RP. Des gardes peuvent se</p>
+<p>trouver partout</p>
+<p>dans ces zones privées.</p>
+<ul><li>L’île est tout de même ouverte au tourisme.</li>
+<li>Certaines ressources peuvent se trouver sur l’île et peuvent être considérées</li>
+</ul><p>comme légales sur</p>
+<p>place et illégales à Los Santos.</p>
+<h3>LE LSPD &amp; LA DOUANE</h3>
+<ul><li>La frontière de Cayo Périco se situe au niveau du pont. La douane peut être présente sur place et effectuer des contrôles. Les fouilles citoyens &amp; véhicules ne sont pas obligatoires. Un individu peut être fouillé s’il est considéré comme suspect.</li>
+<li>Le LSPD peut aller sur l’île mais ne pourra pas effectuer ni de contrôle, ni de fouille, ni d’interventions directement sur l’île.</li>
+<li>Si cependant, une scène démarre sur Los Santos et continue sur Cayo, le LSPD sera dans ce cas autorisé à poursuivre et à agir sur l’île dans la continuité de la scène. L’île de Cayo ne sert pas de Zone Safe.</li></ul></section>
+<section class="rule-section" id="section-12" data-title="règlement illégal"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement illégal</h2><p>Sur FantaLand, nous voulons éviter que l’illégal se résume seulement à des interactions LSPD / illégal. C’est pourquoi il est désormais OBLIGATOIRE en grande partie d’avoir une vie civile pour tous les joueurs jouant dans l’illégal (travailler, aller boire un verre ou participer aux divers évènements).</p>
+<p>Les groupes restant dans leurs coins, en attendant les scènes illégales ou ne faisant que des braquages à longueur de soirée seront dissous.</p>
+<h3>ARMES / TIRS</h3>
+<ul><li>L’utilisation de vos armes sur la Police est autorisée mais engendre de lourdes conséquences, fédérale et / ou mort RP si fusillade.</li>
+<li>Si un Policier braque un de vos ami / coéquipier, vous n’aurez pas le droit de l&#x27;abattre froidement, mais le braquer et essayer de se mettre d’accord.</li>
+</ul><p>Coopérez, et manifestez vos intentions afin de lui laisser une chance.</p>
+<ul><li>Il est interdit d’acheter une arme à un citoyen qui a son PPA ou de lui demander d’aller en acheter pour la revendre.</li>
+<li>N’abusez pas des tirs en voitures. Privilégiez les tirs pour les grosses scènes uniquement.</li>
+<li>Il est interdit de tirer pour le conducteur. Uniquement les passagers peuvent tirer.</li>
+<li>A partir du moment où vous engagez le feu que ce soit sur un autre groupe ou sur le LSPD, attendez vous à des répliques du côté adverse.</li>
+</ul><h3>LES KIDNAPPINGS</h3>
+<ul><li>Kidnapper et / ou braquer un joueur sans aucune raison valable est interdit.</li>
+<li>Il est interdit de kidnapper une personne sous prétexte qu’il fait son métier</li>
+</ul><p>Pour pouvoir le faire vous devrez avoir des raisons fondées. Vous serez dans l&#x27;obligation de respecter les sommations que ce soit pour kidnapper ou braquer un individu.</p>
+<h3>RECONNAISSANCE DE VÉHICULES</h3>
+<p>Les véhicules ne peuvent pas être reconnus totalement.</p>
+<p>Ils peuvent seulement vous laisser des soupçons “Tiens, elle me dit quelque chose cette voiture...”.</p>
+<h3>REVENDICATIONS</h3>
+<p>Si les braqueurs vous forcent à utiliser votre téléphone, vous devrez suivre à la lettre ce qu’ils veulent et vous demandent.</p>
+<p>Vous ne pouvez pas envoyer votre position GPS au premier contact ou prendre le temps de prévenir la police.</p></section>
+<section class="rule-section" id="section-13" data-title="braquages"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Braquages</h2><h3>CITOYEN</h3>
+<ul><li>Il est interdit de voler tout l&#x27;inventaire d’un joueur. Vous ne pourrez prendre que la moitié (argent compris)</li>
+<li>Il est interdit de forcer un citoyen à sortir de l’argent de son coffre ou de son compte bancaire</li>
+<li>Pour braquer quelqu’un depuis un véhicule les deux doivent être à l’arrêt</li>
+<li>Vous ne pouvez pas braquer la même personne plusieurs fois par jour</li>
+</ul><h3>VOL D’ARMES</h3>
+<ul><li>Pour les petites armes : les vols sont autorisés mais la scène doit être logique et anticipée. Voler un joueur juste pour faire un “braquage minute” sans scène intéressante n’est pas autorisé.</li>
+</ul><h3>PLANQUE</h3>
+<p>Il est interdit de prendre des positions ou des planques sur des montagnes, bâtiments ou n’importe quel endroit en hauteur &amp; incohérent avant qu’un gunfight soit engagé</p>
+<h3>LIMITE BRAQUAGES</h3>
+<p>Uniquement entre 20h et 3h</p>
+<ul><li>Supérette (2 braqueurs minimum) : 2 / soir (attention le farm intensif est lourdement sanctionné). Obligation d’attendre le LSPD 10 minutes</li>
+<li>ATM (3 braqueurs minimum) : 1 / soir</li>
+<li>Fleeca (6 braqueurs minimum) : 1 / semaine maximum</li>
+<li>Bijouterie (6 braqueurs minimum) : 1 / semaine maximum</li>
+</ul><h3>PACIFIC BANQUE</h3>
+<p>Pour organiser un braquage à la Pacific Banque (10 braqueurs minimum), vous devez obligatoirement réaliser un dossier et le présenter au STAFF. La limite est de 1 braquage autorisé par semaine.</p>
+<h3>FAUX OTAGES</h3>
+<p>Il est strictement interdit d’utiliser des “faux otages” pour les braqueurs (un ami, une connaissance, etc..)</p>
+<h3>PRISE D’OTAGE</h3>
+<ul><li>Braquage supérette =&gt; 1 otage maximum</li>
+</ul><p>(Apu peut être considéré comme un otage)</p>
+<p>-ATM =&gt; 1 otage obligatoire</p>
+<ul><li>Braquage Fleeca Bank =&gt; 2 otages obligatoires</li>
+<li>Braquage Pacific bank =&gt; 4 otages obligatoires</li>
+</ul><h3>DEMANDES DE RANÇON</h3>
+<ul><li>500$ / Citoyen</li>
+<li>800$ / Police</li>
+<li>1000$ / Gouvernement</li></ul></section>
+<section class="rule-section" id="section-14" data-title="règlement général"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>RÈGLEMENT GÉNÉRAL</h2><ul><li>Une hiérarchie doit être établie au sein d’un groupe avec au moins un leader.</li>
+<li>Seul les groupes officiels peuvent récolter/traiter de la drogue.</li>
+<li>Il est strictement interdit d’aller voler dans le coffre ou la caisse de votre groupe pour une raison HRP ou parce qu’on vous a évincé du groupe. Par exemple, si vous ne faites plus partie du projet et que cela a été décidé côté HRP ou RP, vous ne pouvez pas retourner IG et vous venger de votre ancien groupe en volant dans leur coffre.</li>
+<li>Interdiction du RP Snitch.</li>
+</ul><p>Pour préserver l&#x27;immersion, il est interdit de divulguer des informations confidentielles à la police par vengeance ou insatisfaction en RP. Priorisez les scènes immersives et réalistes. Contribuez à un jeu agréable et équitable.</p></section>
+<section class="rule-section" id="section-15" data-title="groupes indés"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Groupes indés</h2><h3>GROUPES INDÉS</h3>
+<ul><li>Les groupes indés sont autorisés et libres.</li>
+<li>Les groupes indés doivent compter entre 2 et 5 membres maximum. Au-delà, le groupe risque le wipe et la sanction</li>
+<li>Si au bout de certaines semaines de jeu, nous voyons que votre groupe tient la route, que votre RP est qualitatif vous pourrez proposer un dossier au staff et faire une demande d&#x27;officialisation de votre groupe</li>
+<li>Un groupe indé ne peut pas revendiquer de territoire ni prendre le pouvoir sur un gang</li>
+<li>Vous avez pour obligation de ne pas passer 100% de votre temps sur le côté illégal. Vous devez continuer à jouer du côté civil, aller aux évènements etc. Profitez justement de votre double casquette civil/illégal pour partager votre jeu et être discret.</li>
+</ul><h3>LE BUT DES GROUPES INDÉS</h3>
+<ul><li>Donner des scènes aux gangs officiels. Gagnez la confiance des gangs, faites vous engager pour des missions</li>
+<li>Si votre but est uniquement de farm et d&#x27;être dans votre coin vous serez sanctionnés. Votre but est de donner du jeu. Votre but ne sera ni de farm intensivement de la drogue, ni de farm des braquages puisque vous devrez passer par les gangs pour développer votre jeu.</li></ul></section>
+<section class="rule-section" id="section-16" data-title="groupes officiels"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Groupes officiels</h2><p>GROUPES OFFICIELS (sous dossier)</p>
+<ul><li>Gangs du lore GTA V ou Gangs libres</li>
+<li>8 membres maximum (chiffre évolutif en fonction du nombre de joueurs global du serveur)</li>
+<li>6 membres minimum obligatoire</li>
+<li>Chaque groupe doit garder une cohérence sur les recrutements (origines, passions, vécu)</li>
+</ul><h3>LES PÉNALITÉS DE GROUPES</h3>
+<p>Afin de conserver une qualité de jeu au sein des groupes officiels, nous mettons en place un &quot;barème de pénalités&quot;.</p>
+<p>Ce système de rappel permet de demander l&#x27;amélioration d&#x27;une dynamique de groupe illégal (groupes officiels), en fonction de leur RP qui ne conviendrait pas au plateau de jeu.</p>
+<p class="rule-point">🟨 Première pénalité</p>
+<p>Il est alors demandé au groupe de nettoyer ses rangs : sortie de membres problématiques, rappels fait sur leur comportement, c&#x27;est une première demande pour exiger du groupe de clean les comportements gênants.</p>
+<p class="rule-point">🟧 Deuxième pénalité</p>
+<p>Quand cela ne suffit pas après plusieurs jours de même jeu malgré la première pénalité, une deuxième est appliquée, avec obligation de faire le nécessaire de façon absolue.</p>
+<p class="rule-point">🟥 Troisième pénalité</p>
+<p>C&#x27;est le dernier ultimatum. Si rien n&#x27;est arrangé dans les scènes suivantes, c&#x27;est dissolution du groupe. Vous serez donc dans l&#x27;obligation soit de wipe, soit de continuer votre personnage mais en prenant une autre direction.</p>
+<p>Les pénalités sont dissociées des sanctions. Si un joueur doit être sanctionné de manière individuelle suite au non-respect du règlement, il le sera. Les pénalités serviront vraiment à assurer le suivi des groupes dans la globalité.</p>
+<h3>ACTIVITÉ DES GROUPE OFFICIELS</h3>
+<ul><li>Si vous avez un groupe sur le serveur, que votre nombre de joueurs se réduit petit à petit, et que vous descendez en dessous des 6 membres, votre groupe sera dissous.</li>
+</ul><p>C&#x27;est à vous en RP d&#x27;entretenir votre groupe, de recruter si vous perdez des membres. On vous laissera un délai pour &quot;ré-intégrer&quot; des joueurs à votre projet. Si vous n&#x27;y parvenez pas votre groupe sera dissous.</p>
+<ul><li>Avoir un groupe est une grosse responsabilité, tout comme avoir une entreprise. Si vous prenez la décision de créer un groupe, il faut vous y tenir jusqu&#x27;au bout et tout faire pour alimenter votre RP le plus longtemps possible.</li>
+</ul><h3>LES ALLIANCES</h3>
+<ul><li>Les alliances entre groupes sont interdites.</li>
+<li>Au pire, si vous avez des ennemis en commun, faites un ticket.</li>
+</ul><h3>LES GROUPES INDÉS</h3>
+<ul><li>Vous pouvez engager des civils / groupes indés pour réaliser vos missions, vente de drogues etc. Cependant, vous devez d&#x27;abord créer un RP logique avec les joueurs en question. Vous ne pouvez pas faire confiance à un civil en 5 minutes et lui confier toutes vos missions. N&#x27;oubliez pas que n&#x27;importe qui peut être groupe indé, même des infiltrés côté LSPD, donc soyez vigilants !</li>
+</ul><h3>EN SCÈNE</h3>
+<ul><li>Sur scène, vous devrez éviter les supériorités numériques abusives</li>
+<li>Lors d’un gunfight, si vous êtes touchés, vous devez au moins attendre que votre personnage se repose et récupère, pour la cohérence.</li>
+</ul><p>Il faudra attendre 1 jour avant de reprendre des actions illégales avec votre perso</p>
+<h3>DESCENTE</h3>
+<ul><li>Pour faire une descente dans un quartier adverse il faut obligatoirement avoir l’accord d’un staff et faire une demande via ticket</li>
+<li>Lors d’une descente dans un quartier adverse, privilégiez le dialogue avant de déclencher le gunfight.</li>
+<li>Vous devez être au minimum 8 pour pouvoir organiser une descente</li>
+</ul><h3>ATTAQUE DE CONVOI / CARGAISON</h3>
+<ul><li>Il est strictement interdit de voler + de 50% de la cargaison d’un groupe adverse</li>
+<li>Nous vous rappelons qu’un riot / fourgon blindé pèse environ 7 tonnes soit l’équivalent de 5 véhicules</li>
+<li>Pour braquer/voler un convoi de Gruppe 6, Post-UP ou d’un camion / camionnette blindée il vous faudra préparer un plan stratégique afin d’immobiliser le véhicule.</li>
+<li>Les véhicules de type : voiture ne suffisent pas à arrêter/bloquer un fourgon blindé</li>
+<li>Il est interdit de faire les pneus d’un camion/camionnette blindé avec un pistolet (seulement des armes lourdes).</li>
+</ul><h3>ATTAQUE DE TERRITOIRE / BUSINESS</h3>
+<ul><li>Une attaque de territoire peut être organisée avec 5 membres obligatoires minimum</li>
+<li>Lorsqu’un gang/orga souhaite revendiquer le territoire/business d’un groupe ennemi, ils doivent se mettre d’accord sur comment l’attaque de territoire / business se déroule.</li>
+<li>Le groupe perdant n’a plus le droit de faire d’attaque sur ce territoire/business durant 5 jours.</li>
+</ul><h3>POINT ILLÉGAL</h3>
+<ul><li>Un point illégal est une information importante et rare, il ne doit pas être vendu facilement et à tout le monde.</li>
+<li>Seuls les groupes officiels peuvent y avoir accès après de bonnes négociations.</li>
+<li>Un groupe qui détient un point ne peut le vendre à tous les groupes, une cohérence doit exister. Un point ne peut être loué (ce n’est pas un objet mais une localisation)</li>
+</ul><h3>ÉQUIPEMENTS</h3>
+<ul><li>Pour les armes obtenus légalement, il est strictement interdit de vendre des armes aux civils et de transférer des armes d’une personne à une autre dans un poste de police ou hôpital</li>
+</ul><h3>GUNFIGHT</h3>
+<ul><li>Lors d’un gunfight la demande de “first shoot” doit être désignée uniquement et seulement par le lead du groupe cependant privilégiez les scènes de parole au tir</li>
+<li>Il est strictement interdit de ragdoll (tomber / se relever) pour éviter de se faire tuer ou en plein gunfight</li>
+<li>Il est strictement interdit d’utiliser les emotes (allongés, assis etc) en plein gunfight</li>
+<li>Il est strictement interdit d’aller parler / insulter / trash les corps au sol</li>
+</ul><h3>LES ARMES SUR SCÈNE</h3>
+<p>Groupes officiels :</p>
+<ul><li>Pistolets : 8 par scènes maximum</li>
+</ul><h3>ENTREPRISES</h3>
+<ul><li>Un chef ou membre de GANG / ORGA ne pourra pas être patron et co patron d’entreprise.</li></ul></section>
+<section class="rule-section" id="section-17" data-title="drogues"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Drogues</h2><h3>VÉHICULES</h3>
+<p>Lorsque vous récoltez et traiter de la drogue, vous êtes dans l’obligation d’avoir des véhicules adéquats et de déposer la drogue dedans : https://wiki.rage.mp/index.php?title=Vehicles#Vans (commercial / vans + moon beam)</p>
+<h3>VENTE</h3>
+<p>Uniquement entre 20h et 2h</p>
+<ul><li>Il est strictement interdit de vendre de la drogue en moto / quad / scooter</li>
+<li>Prendre le risque de vendre dans les zones revendiquées par les groupes adverses peut avoir des grosses conséquences en RP</li>
+</ul><h3>RECHERCHE DE POINT</h3>
+<ul><li>Passer des heures à frôler les murs de toute la map pour trouver un point illégal est strictement interdit. Ce n’est absolument pas RP. Vous devez récupérer les infos de manière RP et ne pas passer votre temps à chercher dans toute la ville.</li></ul></section>
+<section class="rule-section" id="section-18" data-title="règlement mort rp"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement mort RP</h2><p>Pour toute mort rp d’un personnage ou de vous même, vous devez constituer un dossier.</p>
+<h3>LE DOSSIER</h3>
+<p>Il doit comporter :</p>
+<ul><li>Les personnes touchées par la mort RP</li>
+<li>Le nom des personnes qui seront présentes sur la scène</li>
+<li>Les raisons de la mort RP et son explication en détails</li>
+<li>Le potentiel déroulement de la scène</li>
+<li>Une porte de sortie (celle ci n’est pas toujours envisageable, mais elle est appréciée)</li>
+<li>Votre dossier de WIPE sera étudié par le staff et une réponse vous sera donnée sous 48H00.</li>
+</ul><h3>LA SCÈNE</h3>
+<ul><li>Si un joueur est au courant de sa mort RP de n’importe quelle manière et malgré lui, il doit en aucun cas en tenir compte en RP et jouer le jeu.</li>
+<li>Il faut que tout le monde soit fair play, afin d&#x27;éviter le WIN RP.</li>
+<li>Si le joueur concerné par la mort RP se réfugie dans une zone safe pour fuir la scène, les commanditeurs de la mort RP auront le droit d’entrer dans la zone safe pour l’attraper.</li>
+<li>Une fois la scène démarrée, la mort RP sera activée pour tout le monde. Aussi bien les “commanditaires” que les personnes visées par la mort RP. C’est donc à vous de bien prévoir votre scène et d’assurer vos arrières. Si vous tombez sur la scène, vous pourriez vous aussi être mort RP à votre tout.</li>
+</ul><p>Lorsqu’un dossier est accepté vous avez un délai de 7 jours pour effectuer votre scène, le joueur en question ne sera pas mis au courant du dossier, mais si vous remarquez qu’il esquive volontairement la scène en ne se connectant plus ou autres veuillez prévenir un membre du staff</p>
+<h3>APRÈS LA MORT RP</h3>
+<ul><li>Une fois wipe, vous aurez une nouvelle identité avec un nouveau background.</li>
+<li>Évitez de refaire le même travail, dans la même entreprise</li>
+<li>Vous ne pouvez pas non plus retourner dans un groupe comme l’était votre ancien perso, avec les mêmes personnes, et vouloir faire les mêmes actions qu’avant.</li>
+<li>Vous ne pouvez avoir aucun lien avec votre ancien personnage</li>
+</ul><p>Le but étant de faire une nouvelle vie, pas un copier coller de l’ancienne.</p>
+<p>Le revenge RP est interdit.</p>
+<p>Venger votre ancien personnage en vous attaquant à un membre de sa famille ou une connaissance est interdit.</p></section>
+<section class="rule-section" id="section-19" data-title="règlement wipe"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement Wipe</h2><p>Aucun joueur ne peut décider seul de mettre fin à son personnage, il faut au préalable un dossier expliquant les raisons et un accord du staff.</p>
+<h3>LE DOSSIER</h3>
+<ul><li>Doit être sous format GDOC</li>
+<li>Expliquer les raisons du wipe</li>
+<li>Expliquer le background de votre nouveau perso</li>
+</ul><p>Sachez que les raisons “je veux faire un nouveau perso pour jouer avec mes potes” ou “je m’ennuie dans mon RP je veux faire autre chose”, ne sont pas des raisons valables pour demander un wipe.</p>
+<p>Nous sommes en RP, c’est à vous de trouver les solutions pour faire évoluer votre personnage et lui faire prendre une autre tournure.</p>
+<p>Si votre personnage a déjà évolué sur le serveur et eu des interactions avec d’autres joueurs, vous ne pouvez pas faire disparaître votre personnage comme ça.</p>
+<p>Votre dossier de WIPE sera étudié par le staff et une réponse vous sera donnée sous 48H00.</p></section>
+<section class="rule-section" id="section-20" data-title="règlement streamer"><div class="section-kicker">FANTALAND • RÈGLEMENT</div><h2>Règlement Streamer</h2><p>Tout trash serveur / staff en stream sera puni d&#x27;un BAN PERM</p>
+<h3>TITRE DU STREAM</h3>
+<ul><li>Nous vous demandons de mettre dans votre titre le nom du serveur</li>
+</ul><p>“FantaLand Semi-WL”.</p>
+<ul><li>Le stream ne doit en aucun cas contenir des noms liés à d&#x27;autres streamers / joueurs actifs sur le serveur sans autorisation.</li>
+</ul><h3>DISCORD</h3>
+<ul><li>Une catégorie “stream” est mise à disposition sur le Discord, pour ceux qui souhaitent partager leur stream. Attention, nous acceptons seulement le partage des streams du serveur FantaLand.</li>
+<li>Idem pour le channel CLIP, seulement les clips de FantaLand sont acceptés</li>
+</ul><h3>DIFFUSION</h3>
+<ul><li>Il est strictement interdit d’aller diffuser du contenu lié à son personnage ou autre depuis le point de vue d’un autre joueur / streamer / vidéo.</li>
+</ul><h3>HRP &amp; STREAMHACK</h3>
+<ul><li> Il est du devoir du streamer et de ses modérateurs de supprimer les messages qui contiennent du HRP.</li>
+<li> Le streamhack ACTIF (regarder clairement le live pour en tirer profit en jeu)</li>
+</ul><p>et PASSIF (être sur le live juste pour lire les réactions du chat etc...) sont strictement interdits</p>
+<ul><li>FantaLand RP n’est pas responsable des dramas entre joueurs, de ce fait dès l’initiation d’une confrontation RP qui dérive en HRP concernant deux ou plusieurs joueurs, ces derniers doivent impérativement MUTE leur live au minimum et régler le conflit à tête reposée.</li>
+<li>Les viewers ne sont pas la mémoire de vos personnages. Si vous oubliez un détail en pleine scène, ce n’est pas à eux de vous le rappeler.</li>
+<li>Il est impératif que le jeu soit développé pour le RP et non pas dans le but unique de divertir le stream, tout streamer qui effectue des actions RP dans le but d’amuser ses viewers sera sanctionné.</li>
+<li>Toute diffusion de contenus qui ne vous appartient pas est interdite.</li></ul></section>
+<div class="empty" id="empty">Aucune règle ne correspond à votre recherche.</div>
+</main></div>
+<footer><strong>FANTALAND SEMI-WL</strong> · Règlement du serveur FiveM<br>Document web préparé à partir du règlement fourni par le serveur.</footer>
+<script>
+const search = document.getElementById('search');
+const sections = [...document.querySelectorAll('.rule-section')];
+const links = [...document.querySelectorAll('.nav-link')];
+const empty = document.getElementById('empty');
+search.addEventListener('input', () => {
+ const q = search.value.trim().toLocaleLowerCase('fr');
+ let visible = 0;
+ sections.forEach((s,i) => {
+  const match = !q || s.innerText.toLocaleLowerCase('fr').includes(q);
+  s.style.display = match ? '' : 'none';
+  links[i].style.display = match ? '' : 'none';
+  if(match) visible++;
+ });
+ empty.style.display = visible ? 'none' : 'block';
+});
+function copyPageLink(){
+ const url = location.href;
+ if(navigator.clipboard && location.protocol !== 'file:'){
+  navigator.clipboard.writeText(url).then(()=>alert('Lien copié !')).catch(()=>prompt('Copie le lien :',url));
+ }else{prompt('Après publication sur GitHub Pages, copie ici le lien de ta page :',url);}
+}
+const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+  if(entry.isIntersecting){
+   links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+entry.target.id));
+  }
+ });
+},{rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body></html>
