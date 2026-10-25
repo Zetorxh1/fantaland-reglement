@@ -1,0 +1,211 @@
+/* discord-auth.css - Styles pour l'authentification Discord FantaLand */
+
+.discord-user-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.discord-user-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+.discord-user-nav-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #ef4444;
+}
+
+.discord-user-nav-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* MODAL DE CONNEXION */
+.discord-auth-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.discord-auth-modal-box {
+    position: relative;
+    background: #111114;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    max-width: 420px;
+    width: 100%;
+    padding: 34px 28px;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(239, 68, 68, 0.15);
+}
+
+.discord-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: #71717a;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.discord-modal-close:hover {
+    color: #fff;
+}
+
+.discord-modal-icon {
+    width: 64px;
+    height: 64px;
+    background: #5865F2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #ffffff;
+    margin: 0 auto 18px;
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.45);
+}
+
+.discord-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.discord-modal-desc {
+    font-size: 13.5px;
+    color: #a1a1aa;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.discord-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-discord-login-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #5865F2;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-discord-login-submit:hover {
+    background: #4752c4;
+    transform: translateY(-1px);
+}
+
+.btn-discord-join-secondary {
+    display: inline-block;
+    color: #a1a1aa;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: color 0.2s;
+}
+
+.btn-discord-join-secondary:hover {
+    color: #ffffff;
+}
+
+/* MENU DÉROULANT UTILISATEUR CONNECTÉ */
+.discord-dropdown-menu {
+    background: #141417;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 190px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: fadeInMenu 0.15s ease-out;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-header-info {
+    font-size: 11px;
+    color: #71717a;
+    padding: 6px 12px 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    color: #d4d4d8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.dropdown-menu-item.logout-item {
+    color: #ef4444;
+}
+
+.dropdown-menu-item.logout-item:hover {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 4px 0;
+}
