@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règlement - FantaLand FA · FiveM Roleplay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-page: #070709;
+            --bg-surface: #0e0e11;
+            --card-bg: rgba(18, 18, 22, 0.85);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --text-sub: #71717a;
+            --accent: #ef4444;
+            --accent-hover: #dc2626;
+            --accent-glow: rgba(239, 68, 68, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* TOPBAR EXACTE PIXELAR */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 76px;
+            background: rgba(7, 7, 9, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 44px;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .brand:hover .brand-logo-img {
+            transform: scale(1.06);
+        }
+
+        .brand-title-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 0.08em;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            line-height: 1.1;
+        }
+
+        .badge-semiwl {
+            color: #ef4444;
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #b4b4bb;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            transition: color 0.18s ease;
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff;
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22px;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--accent);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .link-connexion {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #d4d4d8;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: color 0.18s;
+        }
+
+        .link-connexion:hover {
+            color: #fff;
+        }
+
+        .btn-rejoindre-cut {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: #ffffff !important;
+            padding: 10px 22px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 12.5px;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+            transition: all 0.2s ease;
+        }
+
+        .btn-rejoindre-cut:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            color: #ffffff !important;
+        }
+
+        /* BANNIÈRE RÈGLEMENT PIXELAR */
+        .reglement-page-banner {
+            margin-top: 76px;
+            padding: 58px 44px 34px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .banner-kicker {
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .banner-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(38px, 4.2vw, 56px);
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .banner-desc {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 760px;
+        }
+
+        /* BARRE DE RECHERCHE DANS LE RÈGLEMENT */
+        .search-area-wrapper {
+            margin-top: 32px;
+            max-width: 860px;
+        }
+
+        .search-area-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #e4e4e7;
+            margin-bottom: 10px;
+        }
+
+        .search-box-row {
+            display: flex;
+            align-items: center;
+            background: rgba(18, 18, 22, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 6px 6px 6px 18px;
+            transition: all 0.2s ease;
+        }
+
+        .search-box-row:focus-within {
+            border-color: var(--accent);
+        }
+
+        .search-icon-inline {
+            color: var(--text-sub);
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        .search-input-field {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .search-input-field::placeholder {
+            color: #71717a;
+            font-size: 14.5px;
+        }
+
+        .search-action-btn {
+            background: var(--accent);
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 13.5px;
+            letter-spacing: 0.02em;
+            padding: 10px 22px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .search-action-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* DISPOSITION PRINCIPALE PIXELAR (2 COLONNES) */
+        .docs-main-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 20px 44px 90px;
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* COLONNE GAUCHE : SIDEBAR CHAPITRES */
+        .sidebar-panel {
+            position: sticky;
+            top: 96px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .sidebar-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-panel::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+
+        .sidebar-group-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .sidebar-item-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 9px;
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: all 0.18s ease;
+            border: 1px solid transparent;
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        .sidebar-item-btn i {
+            width: 18px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-sub);
+            transition: color 0.18s;
+        }
+
+        .sidebar-item-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+        }
+
+        .sidebar-item-btn:hover i {
+            color: var(--accent);
+        }
+
+        .sidebar-item-btn.active {
+            background: rgba(239, 68, 68, 0.14);
+            color: #ffffff;
+            border-color: rgba(239, 68, 68, 0.35);
+            font-weight: 600;
+        }
+
+        .sidebar-item-btn.active i {
+            color: var(--accent);
+        }
+
+        /* COLONNE DROITE : CONTENU DES RÈGLES */
+        .content-area-col {
+            min-width: 0;
+        }
+
+        /* Fil d'ariane Pixelar */
+        .breadcrumb-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-bottom: 22px;
+        }
+
+        .breadcrumb-bar a {
+            color: var(--text-sub);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        .breadcrumb-bar a:hover {
+            color: #ffffff;
+        }
+
+        .breadcrumb-bar span.active-crumb {
+            color: #e4e4e7;
+            font-weight: 600;
+        }
+
+        /* Box d'alerte / clé Pixelar */
+        .key-info-box {
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.8) 0%, rgba(18, 18, 22, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 26px 30px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .key-info-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent) 0%, rgba(239, 68, 68, 0.1) 100%);
+        }
+
+        .key-info-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .key-info-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .key-info-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .key-info-text {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .sanctions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .sanction-pill {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #e4e4e7;
+        }
+
+        .sanction-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* CARTES DE RÈGLEMENT DÉTAILLÉES */
+        .rules-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .rule-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 34px 38px;
+            scroll-margin-top: 100px;
+            transition: border-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .rule-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .card-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .card-title-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-kicker {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .rule-card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+
+        .rule-card h3 {
+            font-size: 14.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #e4e4e7;
+            margin: 24px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .rule-card h3::before {
+            content: "";
+            width: 4px;
+            height: 14px;
+            border-radius: 2px;
+            background: var(--accent);
+            display: inline-block;
+        }
+
+        .rule-card p {
+            color: #d4d4d8;
+            font-size: 14.5px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .rule-card ul {
+            margin: 10px 0 16px 20px;
+            color: #d4d4d8;
+            font-size: 14.5px;
+        }
+
+        .rule-card li {
+            margin-bottom: 7px;
+            line-height: 1.6;
+        }
+
+        .rule-card li::marker {
+            color: var(--accent);
+        }
+
+        .callout {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 10px 10px 0;
+            padding: 16px 18px;
+            margin: 18px 0;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .callout-icon {
+            font-size: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .callout-warning {
+            border-left-color: #ef4444;
+            background: rgba(239, 68, 68, 0.08);
+            color: #fca5a5;
+        }
+
+        .callout-warning .callout-icon {
+            color: #ef4444;
+        }
+
+        .callout-warning strong {
+            color: #fee2e2;
+        }
+
+        .rule-pill-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #e4e4e7;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .empty-search-state {
+            display: none;
+            background: var(--card-bg);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 50px 30px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER PIXELAR EXACT */
+        .footer {
+            background: #060608;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 44px 44px 50px;
+            margin-top: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .footer-brand-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            line-height: 1.2;
+        }
+
+        .footer-brand-sub {
+            font-size: 12.5px;
+            color: #71717a;
+            margin-top: 2px;
+        }
+
+        .footer-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .footer-nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: color 0.18s ease, text-decoration-color 0.18s ease;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+            text-decoration-color: #ef4444;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 5px;
+        }
+
+        .footer-link-sub {
+            color: #71717a;
+            font-size: 12.5px;
+        }
+
+        .footer-link-sub:hover {
+            color: #ffffff;
+            text-decoration: underline;
+            text-decoration-color: #ef4444;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 5px;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 12px;
+            color: #71717a;
+            line-height: 1.6;
+        }
+
+        .footer-copyright {
+            color: #a1a1aa;
+            font-weight: 600;
+        }
+
+        .footer-credit {
+            color: #71717a;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1080px) {
+            .docs-main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-panel {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+
+            .sidebar-menu-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .footer-left {
+                justify-content: center;
+            }
+
+            .footer-right {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topbar {
+                height: 65px;
+                padding: 0 16px;
+            }
+
+            .reglement-page-banner {
+                padding: 30px 16px 20px;
+            }
+
+            .docs-main-grid {
+                padding: 10px 16px 60px;
+            }
+
+            .link-connexion {
+                display: none;
+            }
+
+            .btn-rejoindre-cut {
+                padding: 8px 16px;
+                font-size: 11px;
+            }
+
+            .rule-card {
+                padding: 22px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOPBAR EXACTE PIXELAR -->
+    <header class="topbar">
+        <a href="index.html" class="brand">
+            <img src="FantaLandFA.png" alt="Logo FantaLand" class="brand-logo-img">
+            <div class="brand-title-box">
+                <div class="brand-title">FANTALAND FA</div>
+                <span class="brand-subtitle">FiveM Roleplay</span>
+            </div>
+        </a>
+
+        <!-- Menu horizontal central Pixelar -->
+        <ul class="nav-links">
+            <li><a href="reglement.html" class="nav-link active">Règlement</a></li>
+            <li><a href="streams.html" class="nav-link">Streams</a></li>
+            <li><a href="partenaires.html" class="nav-link">Partenaires</a></li>
+            <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        </ul>
+
+        <!-- Connexion & Bouton biseauté REJOINDRE -->
+        <div class="header-right">
+            <a href="https://discord.gg/66PMysp5nz" target="_blank" rel="noopener" class="link-connexion">
+                <i class="fa-regular fa-user"></i>
+                <span>Connexion</span>
+            </a>
+            <a href="https://discord.gg/66PMysp5nz" target="_blank" rel="noopener" class="btn-rejoindre-cut">
+                <span>REJOINDRE</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- BANNIÈRE D'EN-TÊTE DE LA PAGE RÈGLEMENT (STYLE PIXELAR.FR/REGLEMENT) -->
+    <div class="reglement-page-banner">
+        <div class="banner-kicker">
+            <i class="fa-solid fa-book-bookmark"></i>
+            <span>Documentation &amp; Règlement Officiel</span>
+        </div>
+        <h1 class="banner-title">Règlement FANTALAND FA</h1>
+        <p class="banner-desc">
+            Les règles communes pour un roleplay cohérent, créatif et agréable pour tous à Los Santos. Le fair-play et
+            le respect sont indispensables.
+        </p>
+
+        <!-- Barre de recherche -->
+        <div class="search-area-wrapper">
+            <label for="search-input" class="search-area-label">Rechercher dans le règlement</label>
+            <div class="search-box-row">
+                <i class="fa-solid fa-magnifying-glass search-icon-inline"></i>
+                <input type="search" id="search-input" class="search-input-field"
+                    placeholder="Ex. fair-play, entreprise, mort RP, sommations, illégal..."
+                    aria-label="Rechercher une règle">
+                <button type="button" id="search-btn" class="search-action-btn">Rechercher</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN GRID 2 COLONNES (SIDEBAR + FEED DE RÈGLEMENT) -->
+    <main class="docs-main-grid">
+
+        <!-- SIDEBAR GAUCHE (CHAPITRES) -->
+        <aside class="sidebar-panel">
+            <div class="sidebar-group-title">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>Chapitres</span>
+            </div>
+            <nav class="sidebar-menu-list">
+                <a href="#section-0" class="sidebar-item-btn active"><i
+                        class="fa-solid fa-gavel"></i><span>Introduction</span></a>
+                <a href="#section-1" class="sidebar-item-btn"><i class="fa-brands fa-discord"></i><span>Règlement
+                        Discord</span></a>
+                <a href="#section-2" class="sidebar-item-btn"><i class="fa-solid fa-shield-halved"></i><span>Règlement
+                        HRP</span></a>
+                <a href="#section-3" class="sidebar-item-btn"><i class="fa-solid fa-spell-check"></i><span>Lexique
+                        RP</span></a>
+                <a href="#section-4" class="sidebar-item-btn"><i class="fa-solid fa-user-shield"></i><span>Règlement
+                        RP</span></a>
+                <a href="#section-5" class="sidebar-item-btn"><i class="fa-solid fa-city"></i><span>En ville</span></a>
+                <a href="#section-6" class="sidebar-item-btn"><i class="fa-solid fa-heart-pulse"></i><span>États
+                        d’inconscience</span></a>
+                <a href="#section-7" class="sidebar-item-btn"><i class="fa-solid fa-bullhorn"></i><span>Les
+                        sommations</span></a>
+                <a href="#section-8" class="sidebar-item-btn"><i class="fa-solid fa-briefcase"></i><span>Règlement
+                        entreprises</span></a>
+                <a href="#section-9" class="sidebar-item-btn"><i class="fa-solid fa-truck-medical"></i><span>Services
+                        médicaux</span></a>
+                <a href="#section-10" class="sidebar-item-btn"><i class="fa-solid fa-handcuffs"></i><span>Règlement
+                        LSPD</span></a>
+                <a href="#section-11" class="sidebar-item-btn"><i class="fa-solid fa-island-tropical"></i><span>Cayo
+                        Perico</span></a>
+                <a href="#section-12" class="sidebar-item-btn"><i class="fa-solid fa-mask"></i><span>Règlement
+                        illégal</span></a>
+                <a href="#section-13" class="sidebar-item-btn"><i
+                        class="fa-solid fa-sack-dollar"></i><span>Braquages</span></a>
+                <a href="#section-14" class="sidebar-item-btn"><i class="fa-solid fa-layer-group"></i><span>Règlement
+                        général</span></a>
+                <a href="#section-15" class="sidebar-item-btn"><i class="fa-solid fa-people-arrows"></i><span>Groupes
+                        indés</span></a>
+                <a href="#section-16" class="sidebar-item-btn"><i class="fa-solid fa-users-gear"></i><span>Groupes
+                        officiels</span></a>
+                <a href="#section-17" class="sidebar-item-btn"><i
+                        class="fa-solid fa-capsules"></i><span>Drogues</span></a>
+                <a href="#section-18" class="sidebar-item-btn"><i class="fa-solid fa-skull"></i><span>Règlement mort
+                        RP</span></a>
+                <a href="#section-19" class="sidebar-item-btn"><i class="fa-solid fa-rotate-left"></i><span>Règlement
+                        Wipe</span></a>
+                <a href="#section-20" class="sidebar-item-btn"><i class="fa-solid fa-video"></i><span>Règlement
+                        Streamer</span></a>
+            </nav>
+        </aside>
+
+        <!-- COLONNE CONTENU PRINCIPAL -->
+        <div class="content-area-col">
+
+            <!-- Breadcrumb Pixelar -->
+            <div class="breadcrumb-bar">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Règlement</span>
+                <span>/</span>
+                <span class="active-crumb" id="breadcrumb-current">Introduction</span>
+            </div>
+
+            <!-- CARD INFO CLÉS -->
+            <div class="key-info-box">
+                <div class="key-info-header">
+                    <div class="key-info-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                    <div class="key-info-title">À connaître avant de rejoindre Los Santos</div>
+                </div>
+                <p class="key-info-text">
+                    Le règlement est évolutif et s'applique à tous les joueurs. En cas de scène conflictuelle, jouez
+                    votre rôleplay jusqu'au bout puis créez un ticket auprès du staff avec preuves vidéo à l'appui.
+                </p>
+                <div class="sanctions-grid">
+                    <div class="sanction-pill">
+                        <span class="sanction-num">01</span>
+                        <span>Avertissement</span>
+                    </div>
+                    <div class="sanction-pill">
+                        <span class="sanction-num">02</span>
+                        <span>Blâme de joueur / groupe</span>
+                    </div>
+                    <div class="sanction-pill">
+                        <span class="sanction-num">03</span>
+                        <span>Ban temporaire ou définitif</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLUX DE CARTES DE RÈGLEMENT -->
+            <div class="rules-feed">
+
+                <!-- CHAPITRE 0 -->
+                <section class="rule-card" id="section-0" data-title="règlement fantaland introduction">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-gavel"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 01</span>
+                                <h2>Introduction &amp; Principes</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Le règlement du serveur est à lire et à connaître obligatoirement. Certaines fautes peuvent aller
+                        d’un simple avertissement à un ban définitif.</p>
+                    <p>Des modifications sont apportées régulièrement, n’hésitez donc pas à y jeter un œil de temps en
+                        temps.</p>
+                    <div class="callout callout-warning">
+                        <i class="fa-solid fa-triangle-exclamation callout-icon"></i>
+                        <div>
+                            <strong>Important :</strong> Si les règles ne sont pas respectées, en fonction de la gravité
+                            de votre erreur, vous serez sanctionnés : Avertissement, Blâme, ou BAN temporaire/définitif.
+                            Les avertissements sont permanents.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CHAPITRE 1 -->
+                <section class="rule-card" id="section-1" data-title="règlement discord mp ping staff">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-brands fa-discord"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 02</span>
+                                <h2>Règlement Discord</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>MP Staff Interdit</h3>
+                    <p>Il est strictement interdit de MP un membre du staff, Co Fonda ou Fondateur. Tout doit passer par
+                        ticket.</p>
+                    <h3>Ping Staff Interdit</h3>
+                    <p>Il est interdit de ping un membre du staff, Co Fonda, Fondateur ou de ping le serveur dans
+                        n’importe quelle discussion.</p>
+                    <h3>Respect et Politesse</h3>
+                    <p>Faites preuve de respect et de politesse en toute circonstance. En cas de provocation, n'entrez
+                        pas dans l'escalade.</p>
+                    <h3>Nom &amp; Prénom RP</h3>
+                    <p>Il est interdit d'ajouter des préfixes de type [LSPD], [EMS], [PDG] afin d'éviter le Métagaming.
+                    </p>
+                    <h3>Channel Général HRP</h3>
+                    <p>C’est un channel hors-jeu. On ne demande et on ne donne pas d'informations RP dedans.</p>
+                    <h3>Publicité &amp; Remboursements</h3>
+                    <p>Publicité et propositions commerciales externes interdites. Tout remboursement sans preuve vidéo
+                        (rec complet) sera refusé.</p>
+                </section>
+
+                <!-- CHAPITRE 2 -->
+                <section class="rule-card" id="section-2" data-title="règlement hrp cheat mod menu usebug">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 03</span>
+                                <h2>Règlement HRP</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Nom &amp; Prénom RP Obligatoire</h3>
+                    <p>Identique sur Discord, Steam et FiveM sous peine d'exclusion.</p>
+                    <div class="callout callout-warning">
+                        <i class="fa-solid fa-ban callout-icon"></i>
+                        <div>
+                            <strong>Tolérance Zéro :</strong> Mod Menu, logiciels de triche et crosshair externe sont
+                            formellement interdits.<br>
+                            <strong>MOD MENU = BAN DÉFINITIF IMMÉDIAT.</strong>
+                        </div>
+                    </div>
+                    <h3>Usebug</h3>
+                    <p>L’exploitation ou la propagation d’un usebug = BAN définitif.</p>
+                </section>
+
+                <!-- CHAPITRE 3 -->
+                <section class="rule-card" id="section-3"
+                    data-title="lexique rp metagaming powergaming freekill revengekill car kill mass rp carkill">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-spell-check"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 04</span>
+                                <h2>Lexique RP</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Métagaming</h3>
+                    <p>Utiliser des informations acquises en dehors du jeu (Discord, Stream, etc.) directement dans le
+                        roleplay.</p>
+                    <h3>Powergaming</h3>
+                    <p>Réaliser des actions physiquement impossibles (ex: courir après une chute de 3 étages ou un
+                        accident à 200 km/h).</p>
+                    <h3>Freekill &amp; Revengekill</h3>
+                    <p>Tuer sans raison valable ou revenir sur les lieux de son décès pour abattre son assaillant.</p>
+                    <h3>Carkill &amp; No Fear</h3>
+                    <p>Utiliser un véhicule pour heurter ou tuer des joueurs. Ignorer délibérément le danger face à des
+                        armes pointées.</p>
+                    <h3>Mass RP</h3>
+                    <p>Prendre en compte la présence constante d'habitants et de services d'ordre à Los Santos.</p>
+                </section>
+
+                <!-- CHAPITRE 4 -->
+                <section class="rule-card" id="section-4" data-title="règlement rp conduite soundpad masque">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-user-shield"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 05</span>
+                                <h2>Règlement RP</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="callout callout-warning">
+                        <i class="fa-solid fa-triangle-exclamation callout-icon"></i>
+                        <div>
+                            <strong>Propos interdits :</strong> Racisme, sexisme, homophobie, transphobie et scènes de
+                            viol = BAN PERMANENT immédiat.
+                        </div>
+                    </div>
+                    <p>Respect de la gente féminine exigé. Interdiction de reconnaître une personne masquée à sa voix ou
+                        ses vêtements. Un seul métier autorisé par personne.</p>
+                </section>
+
+                <!-- CHAPITRE 5 -->
+                <section class="rule-card" id="section-5" data-title="en ville véhicules vol quartier hotspot">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-city"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 06</span>
+                                <h2>En ville</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Interdit de ranger un véhicule endommagé pour le réparer gratuitement.</li>
+                        <li>2 pneus crevés = arrêt obligatoire dans les 100 mètres.</li>
+                        <li>Interdiction de voler les véhicules de secours (LSPD, EMS, Mécano) ou les armes de service.
+                        </li>
+                        <li>Une seule arme lourde par inventaire. Les quartiers sont des Hot Spots sous tension (Mass
+                            RP).</li>
+                    </ul>
+                </section>
+
+                <!-- CHAPITRE 6 -->
+                <section class="rule-card" id="section-6" data-title="états d'inconscience ko coma malaise">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 07</span>
+                                <h2>Les états d’inconscience</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="rule-pill-badge"><strong>1. K.O :</strong> Assommé / taser, attaque impossible
+                        immédiatement.</p>
+                    <p class="rule-pill-badge"><strong>2. Malaise :</strong> Soif/faim, souvenir complet mais réveil
+                        affaibli.</p>
+                    <p class="rule-pill-badge"><strong>3. Inconscience :</strong> Coups ou accident, amnésie des 10
+                        dernières minutes.</p>
+                    <p class="rule-pill-badge"><strong>4. Coma :</strong> Balle ou crash lourd, amnésie des 30 dernières
+                        minutes.</p>
+                </section>
+
+                <!-- CHAPITRE 7 -->
+                <section class="rule-card" id="section-7" data-title="sommations tirs blesser">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 08</span>
+                                <h2>Les sommations</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Avant d'ouvrir le feu : 1. Sommation vocale/sonore · 2. Tir de sommation ou taser · 3. Blesser
+                        une zone non-létale (bras, jambe). Neutralisation possible après ces 3 étapes.</p>
+                </section>
+
+                <!-- CHAPITRE 8 -->
+                <section class="rule-card" id="section-8" data-title="règlement entreprises patron vente illégal">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 09</span>
+                                <h2>Règlement entreprises</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Un seul patron par entreprise. Embauche RP obligatoire. Interdiction totale pour un dirigeant de
+                        tremper dans l'illégal (sauf dossier validé). Fonds de caisse de 3000$ à laisser en cas de
+                        départ.</p>
+                </section>
+
+                <!-- CHAPITRE 9 -->
+                <section class="rule-card" id="section-9" data-title="services médicaux ems soigner hopital">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-truck-medical"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 10</span>
+                                <h2>Services médicaux</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Serment d'Hippocrate respecté en tout temps. Interdiction formelle de braquer les médecins en
+                        service ou de réanimer en cours de fusillade active.</p>
+                </section>
+
+                <!-- CHAPITRE 10 -->
+                <section class="rule-card" id="section-10" data-title="lspd police controles tirs gav ripoux">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-handcuffs"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 11</span>
+                                <h2>Règlement LSPD</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Présomption d'innocence de mise. Interdiction d'être ripoux ou d'employer des indics. PIT
+                        interdits. GAV plafonnée à 20 min sans scène.</p>
+                </section>
+
+                <!-- CHAPITRE 11 -->
+                <section class="rule-card" id="section-11" data-title="cayo perico douane frontière">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-island-tropical"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 12</span>
+                                <h2>Cayo Perico</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Juridiction indépendante surveillée par une milice armée. Le LSPD n'y opère pas de contrôles
+                        directs sauf poursuite directe engagée depuis Los Santos.</p>
+                </section>
+
+                <!-- CHAPITRE 12 -->
+                <section class="rule-card" id="section-12" data-title="règlement illégal civil kidnapping">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-mask"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 13</span>
+                                <h2>Règlement illégal</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Vie civile obligatoire pour tout joueur de l'illégal. Seuls les passagers peuvent tirer en
+                        véhicule. Kidnappings motivés obligatoires.</p>
+                </section>
+
+                <!-- CHAPITRE 13 -->
+                <section class="rule-card" id="section-13"
+                    data-title="braquages supérette banque fleeca pacific otages rançon">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-sack-dollar"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 14</span>
+                                <h2>Braquages</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p><strong>Horaires autorisés :</strong> Entre 20h00 et 03h00 du matin uniquement.</p>
+                    <ul>
+                        <li>Supérette : 2 braqueurs min, 2 / soir, attente LSPD 10 min.</li>
+                        <li>ATM : 3 braqueurs min, 1 / soir. Fleeca : 6 braqueurs min, 1 / semaine.</li>
+                        <li>Pacific Bank : 10 braqueurs min sur dossier validé. Faux otages interdits.</li>
+                    </ul>
+                </section>
+
+                <!-- CHAPITRE 14 -->
+                <section class="rule-card" id="section-14" data-title="règlement général organisation groupe snitch">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 15</span>
+                                <h2>Règlement général organisations</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Hiérarchie établie obligatoire. Seuls les groupes officiels peuvent récolter et traiter. RP
+                        Snitch par rancœur HRP interdit.</p>
+                </section>
+
+                <!-- CHAPITRE 15 -->
+                <section class="rule-card" id="section-15" data-title="groupes indés indépendants">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-people-arrows"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 16</span>
+                                <h2>Groupes indés</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>De 2 à 5 membres maximum. Objectif : alimenter le jeu avec les gangs officiels, sans
+                        revendication territoriale ni farm isolé.</p>
+                </section>
+
+                <!-- CHAPITRE 16 -->
+                <section class="rule-card" id="section-16" data-title="groupes officiels gang orga penalites">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-users-gear"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 17</span>
+                                <h2>Groupes officiels</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>De 6 à 8 membres sur dossier. Pénalités graduées : 🟨 1ère (nettoyage interne) · 🟧 2ème (dernier
+                        rappel) · 🟥 3ème (dissolution et wipe).</p>
+                </section>
+
+                <!-- CHAPITRE 17 -->
+                <section class="rule-card" id="section-17" data-title="drogues vans vente recolte">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-capsules"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 18</span>
+                                <h2>Drogues</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Utilitaires / vans obligatoires. Vente permise de 20h00 à 02h00 uniquement. Interdiction absolue
+                        de vendre en deux-roues ou de chercher les points sans indices RP.</p>
+                </section>
+
+                <!-- CHAPITRE 18 -->
+                <section class="rule-card" id="section-18" data-title="mort rp dossier scene">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-skull"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 19</span>
+                                <h2>Mort RP</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Dossier staff argumenté sous 48h obligatoire avec porte de sortie. Délai d'action : 7 jours.
+                        Revenge RP formellement proscrit après wipe.</p>
+                </section>
+
+                <!-- CHAPITRE 19 -->
+                <section class="rule-card" id="section-19" data-title="wipe dossier gdoc">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-rotate-left"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 20</span>
+                                <h2>Règlement Wipe</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Interdiction de wipe sans accord staff. Dossier requis présentant les justifications RP et le
+                        projet pour le nouveau personnage.</p>
+                </section>
+
+                <!-- CHAPITRE 20 -->
+                <section class="rule-card" id="section-20" data-title="streamer twitch diffusion streamhack">
+                    <div class="card-header-wrapper">
+                        <div class="card-title-group">
+                            <div class="card-icon-box"><i class="fa-solid fa-video"></i></div>
+                            <div class="card-title-text">
+                                <span class="card-kicker">FANTALAND FA • Chapitre 21</span>
+                                <h2>Règlement Streamer</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="callout callout-warning">
+                        <i class="fa-solid fa-shield-cat callout-icon"></i>
+                        <div>
+                            <strong>Avertissement :</strong> Tout dénigrement du serveur ou du staff en live = BAN PERM
+                            immédiat. Mention obligatoire de « FANTALAND FA » dans le titre.
+                        </div>
+                    </div>
+                </section>
+
+                <div class="empty-search-state" id="empty-state">
+                    <i class="fa-solid fa-folder-open"
+                        style="font-size: 38px; color: var(--text-sub); margin-bottom: 12px;"></i>
+                    <h4 style="color: #fff; margin-bottom: 6px;">Aucun résultat trouvé</h4>
+                    <p>Aucune règle ne correspond à votre recherche. Modifiez vos mots-clés.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER PIXELAR EXACT -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- GAUCHE : Logo + Nom + Description -->
+            <div class="footer-left">
+                <img src="FantaLandFA.png" alt="Logo FantaLand" class="footer-logo-img">
+                <div>
+                    <div class="footer-brand-title">
+                        <span>FANTALAND FA</span>
+                    </div>
+                    <div class="footer-brand-sub">Serveur roleplay francophone sur FiveM.</div>
+                </div>
+            </div>
+
+            <!-- CENTRE : Liens sur 2 rangées avec soulignement rouge -->
+            <div class="footer-center">
+                <div class="footer-nav-row">
+                    <a href="reglement.html" class="footer-link">Règlement</a>
+                    <a href="streams.html" class="footer-link">Streams</a>
+                    <a href="partenaires.html" class="footer-link">Partenaires</a>
+                    <a href="galerie.html" class="footer-link">Galerie</a>
+                    <a href="https://discord.gg/66PMysp5nz" target="_blank" rel="noopener" class="footer-link">Discord</a>
+                </div>
+                <div class="footer-nav-row">
+                    <a href="#section-0" class="footer-link footer-link-sub">Conditions d'utilisation</a>
+                    <a href="#section-0" class="footer-link footer-link-sub">Confidentialité</a>
+                </div>
+            </div>
+
+            <!-- DROITE : Copyright & Mention communauté -->
+            <div class="footer-right">
+                <div class="footer-copyright">© 2026 FantaLand FA</div>
+                <div class="footer-credit">Communauté FiveM Roleplay</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // RECHERCHE EN TEMPS RÉEL DANS LE RÈGLEMENT
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        const ruleCards = Array.from(document.querySelectorAll('.rule-card'));
+        const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-item-btn'));
+        const emptyState = document.getElementById('empty-state');
+        const breadcrumbCurrent = document.getElementById('breadcrumb-current');
+
+        function handleSearch() {
+            const q = (searchInput.value || '').trim().toLowerCase();
+            let matchCount = 0;
+
+            ruleCards.forEach((card, idx) => {
+                const text = card.innerText.toLowerCase();
+                const dataTitle = (card.getAttribute('data-title') || '').toLowerCase();
+                const match = !q || text.includes(q) || dataTitle.includes(q);
+
+                card.style.display = match ? '' : 'none';
+                if (sidebarLinks[idx]) {
+                    sidebarLinks[idx].style.display = match ? 'flex' : 'none';
+                }
+                if (match) matchCount++;
+            });
+
+            if (emptyState) {
+                emptyState.style.display = matchCount === 0 ? 'block' : 'none';
+            }
+        }
+
+        searchInput.addEventListener('input', handleSearch);
+        if (searchBtn) searchBtn.addEventListener('click', handleSearch);
+
+        // INTERSECTION OBSERVER POUR LE MENU LATÉRAL ET BREADCRUMB
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    sidebarLinks.forEach(link => {
+                        const isMatch = link.getAttribute('href') === '#' + id;
+                        link.classList.toggle('active', isMatch);
+                        if (isMatch && breadcrumbCurrent) {
+                            const titleSpan = link.querySelector('span');
+                            if (titleSpan) breadcrumbCurrent.textContent = titleSpan.textContent;
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-15% 0px -65% 0px' });
+
+        ruleCards.forEach(c => observer.observe(c));
+    </script>
+</body>
+
+</html>
